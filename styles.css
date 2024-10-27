@@ -1,5 +1,5 @@
 body {
-   min-height: 100vh;
+   min-height: 100vh; /* vh - viewport heigth size elements relative to the size of thr browser */
    min-width: 100vh;
    background-color: #12181f;
    color: white;
@@ -26,26 +26,26 @@ body {
      padding: 8px 16px;
      font-size: 30px;
      border-radius: 10px;
-     background-color: #27ae60;
-     color: white;
+     background-color: hsl(27, 90%, 47%);
+     color: black;
  }
  
  .grid-container {
    display: grid;
    justify-content: center;
-   grid-gap: 16px;
-   grid-template-columns: repeat(4, 140px);
-   grid-template-rows: repeat(4, calc(140px / 2 * 3));
+   grid-gap: 16px; /*Creates a gap between each grid item of 16px*/
+   grid-template-columns: repeat(4, 140px); /* Creates 4 columns with width of 140px */
+   grid-template-rows: repeat(4, calc(140px / 2 * 3)); /* Creates 4 rows with height of 210px */
  }
  
  .card {
-   height: calc(140px / 2 * 3);
+   height: calc(140px / 2 * 3); 
    width: 140px;
-   border-radius: 10px;
+   border-radius: 10px; /* Makes it so the corner is round */
    background-color: white;
    position: relative;
-   transform-style: preserve-3d;
-   transition: all 0.5s ease-in-out;
+   transform-style: preserve-3d; /* Enables 3-d transformations*/
+   transition: all 0.5s ease-in-out; /* Animates any changes to the card's properties over 0.5s*/
  }
  
  .front-image {
@@ -54,23 +54,24 @@ body {
  }
  
  .card.flipped {
-   transform: rotateY(180deg);
+   transform: rotateY(180deg); /* Rotates card along y-axis*/
  }
  
  .front, .back {
-     backface-visibility: hidden;
+     backface-visibility: hidden; /*prevents the back of the card from showing when flipped */
      position: absolute;
      border-radius: 10px;
-     top: 0;
-     left: 0;
+     top: 0; /*Set to 0 to fill the card completely.*/
+     left: 0; /*Set to 0 to fill the card completely.*/
      height: 100%;
      width: 100%;
  }
  
  .card .front {
-   display: flex;
+   display: flex;  
    justify-content: center;
    align-items: center;
+   transform: rotateY(180deg);
  }
  
  .card .back {
@@ -80,7 +81,5 @@ body {
    backface-visibility: hidden;
  }
  
- .card .front {
-   transform: rotateY(180deg);
- }
+
  
